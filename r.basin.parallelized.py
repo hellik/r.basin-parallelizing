@@ -32,6 +32,8 @@ def rbasin_calculation(curr_coors):
   
         # build cmd string (r.basin + parameters + curr_coors)
         coor_pairs = curr_coors[0]+","+curr_coors[1]
+        prefix = "s_"+curr_coors[0]+"_"+curr_coors[1]
+        cmd = "r.basin map=elevation threshold=1000 dir=xxx prefix=%s coordinates=%s" % (prefix, coor_pairs)
   
         # run r.basin
         os.system(cmd)
