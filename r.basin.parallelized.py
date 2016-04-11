@@ -37,20 +37,22 @@ def rbasin_calculation(curr_coors):
         
         print "just finished ", curr_coors
  
-#---
- 
-# open csv file with coor pairs
-with open('coors.csv', 'rb') as coors_csvinfile:
-    coorreader = csv.reader(coors_csvinfile, delimiter = ',')
+#---main 
+if __name__ == '__main__':
 
-# parse coor pairs and write them to list
-coor_list = [] #initialize list
-
-
-# list of coords already done
-coor_list_done = []
- 
-pool = Pool(3) # 3 workers (you can increase)
-pool.map(rbasin_calculation, coor_list)
-pool.close()
-pool.join()
+    #initialize coordinates list
+    coor_list = [] 
+	 
+    # open csv file with coor pairs
+    with open('coors.csv', 'rb') as coors_csvinfile:
+        coorreader = csv.reader(coors_csvinfile, delimiter = ',')
+        # parse coor pairs and write them to list
+        coor_list = list(coorreader)
+    
+    # list of coords already done
+    coor_list_done = []
+     
+    pool = Pool(3) # 3 workers (you can increase)
+    pool.map(rbasin_calculation, coor_list)
+    pool.close()
+    pool.join()
