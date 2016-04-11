@@ -40,6 +40,8 @@ def rbasin_calculation(curr_coors):
 #---
  
 # open csv file with coor pairs
+with open('coors.csv', 'rb') as coors_csvinfile:
+    coorreader = csv.reader(coors_csvinfile, delimiter = ',')
 
 # parse coor pairs and write them to list
 coor_list = [] #initialize list
