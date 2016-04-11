@@ -31,6 +31,7 @@ def rbasin_calculation(curr_coors):
         MAPSET = "mymapset"
   
         # build cmd string (r.basin + parameters + curr_coors)
+        coor_pairs = curr_coors[0]+","+curr_coors[1]
   
         # run r.basin
         os.system(cmd)
