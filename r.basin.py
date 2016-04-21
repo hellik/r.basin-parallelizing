@@ -392,7 +392,7 @@ def main():
         basin_north = baricenter_slope_baricenter[34]
         info_region_basin = grass.read_command("g.region",
                                             vect = options['prefix']+'_'+mapname[0]+'_basin',
-                                            flags = 'm')
+                                            flags = 'mu')
 
         grass.message("g.region done")
         dict_region_basin = dict(x.split('=', 1) for x in info_region_basin.split('\n') if '=' in x)
