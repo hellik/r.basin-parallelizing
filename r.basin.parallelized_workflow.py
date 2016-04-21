@@ -2,6 +2,7 @@
 
 # script for parallelizing r.basin
 # assuming the dem in PERMANENT, we create a new mapset for each run
+# AUTHOR(S):   Margherita Di Leo, Helmut Kudrnovsky
 
 from multiprocessing import cpu_count,Pool,Lock
 import multiprocessing
