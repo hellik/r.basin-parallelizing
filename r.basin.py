@@ -4,6 +4,7 @@
 #
 # MODULE:      r.basin
 # AUTHOR(S):   Margherita Di Leo, Massimo Di Stefano
+#              modifications for parallel safety by Helmut Kudrnovsky
 # PURPOSE:     Morphometric characterization of river basins
 # COPYRIGHT:   (C) 2010-2014 by Margherita Di Leo & Massimo Di Stefano
 #              dileomargherita@gmail.com
