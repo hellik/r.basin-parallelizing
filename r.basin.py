@@ -148,7 +148,7 @@ def main():
 
 
     # Save current region
-    grass.read_command('g.region', flags = 'p', save = 'original')
+    # grass.read_command('g.region', flags = 'p', save = 'original')
 
     # Watershed SFD
     grass.run_command('r.watershed', elevation = r_elevation,
@@ -395,7 +395,7 @@ def main():
                                             vect = options['prefix']+'_'+mapname[0]+'_basin',
                                             flags = 'mu')
 
-        grass.message("g.region done")
+        grass.message("Calculation of rectangle containing basin done")
         dict_region_basin = dict(x.split('=', 1) for x in info_region_basin.split('\n') if '=' in x)
         basin_resolution = float(dict_region_basin['nsres'])
 #        x_massimo = float(dict_region_basin['n']) + (basin_resolution * 10)
@@ -834,7 +834,7 @@ def main():
 
     
     # Set region to original
-    grass.read_command('g.region', flags = 'p', region = 'original')
+    # grass.read_command('g.region', flags = 'p', region = 'original')
     grass.run_command('g.remove', flags = 'f', type = 'region', name = 'original')
 
 if __name__ == "__main__":
